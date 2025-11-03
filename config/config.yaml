@@ -1,0 +1,67 @@
+# Project Configuration
+
+# Data Collection Parameters
+data_collection:
+  n_plate_appearances: 500          # Number of early career PA to analyze
+  min_career_pa: 1000               # Minimum career PA for inclusion
+  debut_year_start: 2015            # Only players debuting 2015+
+  debut_year_end: 2020              # Latest debut year to ensure career data
+  
+  # Date ranges for data fetching
+  statcast_start_date: "2015-01-01"
+  statcast_end_date: "2024-12-31"
+
+# Feature Engineering
+features:
+  # Which stats to calculate from Statcast (subject to change)
+  statcast_features:
+    - avg
+    - obp
+    - slg
+    - exit_velocity
+    - launch_angle
+    - barrel_rate
+    - hard_hit_rate
+    - k_rate
+    - bb_rate
+    - xwoba
+    - xba
+  
+  # Supplementary features from other sources (subject to change)
+  supplementary_features:
+    - draft_position
+    - age_at_debut
+    - position
+
+# Target Variables (what we're predicting) (probably just WAR)
+targets:
+  primary: "career_war"
+  secondary:
+    - "career_length"
+    - "peak_war"
+    - "made_allstar"
+
+# Model Parameters
+model:
+  test_size: 0.2
+  validation_size: 0.1
+  random_state: 42
+  
+  # Models to try
+  algorithms:
+    - linear_regression
+    - random_forest
+    - xgboost
+    - gradient_boosting
+  
+  # Hyperparameter search
+  cv_folds: 5
+  n_iterations: 50
+
+# Data Storage
+paths:
+  raw_data: "data/raw/"
+  processed_data: "data/processed/"
+  final_data: "data/final/"
+  models: "results/models/"
+  figures: "results/figures/"

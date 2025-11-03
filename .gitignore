@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+
+# Data files (too large for git)
+data/raw/
+data/processed/
+data/final/
+*.csv
+*.parquet
+*.pkl
+
+# Model files
+results/models/*.pkl
+results/models/*.joblib
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Credentials
+*.env
+secrets.yaml
