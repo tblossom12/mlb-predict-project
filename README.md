@@ -1,5 +1,6 @@
 # MLB Career Prediction Project
 Work in Progress
+
 Predicting long-term MLB career success from early career performance using Statcast data.
 
 ## Project Overview
